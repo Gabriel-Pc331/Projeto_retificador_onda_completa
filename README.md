@@ -1,115 +1,120 @@
- Projeto de Fonte 5V com 7805
+# 🔌 Projeto de Fonte 5V com 7805
 
-Este projeto consiste em uma fonte de alimentação linear simples utilizando um transformador, ponte retificadora, regulador de tensão 7805, capacitores de filtragem/desacoplamento e um LED indicador. A saída nominal é de 5V DC, adequada para alimentar pequenos projetos eletrônicos.
+Este projeto consiste em uma **fonte de alimentação linear simples**, utilizando:
 
-Índice de Seções :
+- Um transformador
+- Ponte retificadora
+- Regulador de tensão 7805
+- Capacitores de filtragem/desacoplamento
+- LED indicador
 
-1.Objetivo do Projeto
+🎯 **Objetivo**: Obter uma saída de **5V DC** estável, adequada para alimentar pequenos projetos eletrônicos.
 
-2.Componentes Utilizados
+---
 
-3.Esquemático
+## 📚 Índice de Seções
 
-4.PCB
+1. [🎯 Objetivo do Projeto](#-objetivo-do-projeto)
+2. [🧰 Componentes Utilizados](#-componentes-utilizados)
+3. [📘 Esquemático](#-esquemático)
+4. [🧩 PCB](#-pcb)
+5. [🔍 Visualização 3D](#-visualização-3d)
+6. [🛠️ Prática (Montagem Breadboard)](#️-prática-montagem-breadboard)
+7. [👤 Autor e Data](#-autor-e-data)
 
-5.Visualização 3D
+---
 
-6.Prática (Montagem Breadboard)
-
-
-1.Objetivo do Projeto
+## 🎯 Objetivo do Projeto
 
 O objetivo é demonstrar a montagem de uma fonte linear que:
 
-Reduz a tensão da rede elétrica por meio de um transformador (por exemplo, 110/220VAC para 9VAC ou 12VAC).
+- 🔻 Reduz a tensão da rede elétrica por meio de um transformador (ex: 110/220VAC para 9VAC ou 12VAC)  
+- 🔁 Retifica a saída do transformador com uma ponte retificadora (BR1)  
+- ⚡ Filtra a tensão DC resultante com capacitores (C1, C2, C3)  
+- 🔧 Regula a tensão para **5V estáveis** com o regulador linear 7805 (U1)  
+- 💡 Indica a presença de tensão de saída com um LED (D1) em série com um resistor de 220 Ω (R1)
 
-Retifica a saída do transformador com uma ponte retificadora (BR1).
+---
 
-Filtra a tensão DC resultante com capacitores (C1, C2, C3).
+## 🧰 Componentes Utilizados
 
-Regula a tensão para 5V estáveis com o regulador de tensão linear 7805 (U1).
+| Componente       | Valor / Modelo      | Função                                      |
+|------------------|---------------------|---------------------------------------------|
+| Transformador     | 110/220VAC → 9V/12V | Redução da tensão da rede                   |
+| Ponte Retificadora | BR1                | Conversão de AC para DC                     |
+| Regulador de Tensão | 7805 (U1)         | Regulação da tensão para 5V                 |
+| Capacitor C1       | 1 µF               | Filtro principal / desacoplamento           |
+| Capacitor C2       | 22 nF              | Filtro de alta frequência (entrada do 7805) |
+| Capacitor C3       | 22 nF              | Filtro de alta frequência (saída do 7805)   |
+| LED Vermelho (D1)  | -                  | Indicação de funcionamento                  |
+| Resistor R1        | 220 Ω              | Limitador de corrente para o LED            |
+| J1 / J2            | -                  | Conectores de entrada e saída               |
 
-Indica a presença de tensão de saída com um LED (D1) em série com um resistor de 220 Ω (R1).
+---
 
-2.Componentes Utilizados
+## 📘 Esquemático
 
-Transformador: 110/220VAC para 9V ou 12V (saída AC)
-
-Ponte Retificadora: BR1
-
-Regulador de Tensão: 7805 (U1)
-
-Capacitores:
-
-C1 = 1 µF (filtro principal ou desacoplamento)
-
-C2 = 22 nF (filtro de alta frequência no pino de entrada do 7805)
-
-C3 = 22 nF (filtro de alta frequência no pino de saída do 7805)
-
-LED Vermelho (D1) + Resistor 220 Ω (R1) para indicação de alimentação
-
-Conectores: J1 (entrada AC do transformador) e J2 (saída 5V)
-
-3.Esquemático
+📷 **Diagrama Elétrico do Circuito**:
 
 ![Esquematico](Portfólio/Esquematico/captura_de_tela2.png)
-Esta imagem representa todo o diagrama elétrico do circuito.
 
-J1 recebe a tensão AC do transformador.
+🔌 Explicação:
+- J1 recebe a tensão AC do transformador  
+- A ponte retificadora (BR1) converte AC em DC pulsante  
+- O capacitor C1 realiza a filtragem inicial  
+- C2 e C3 atuam como filtros de alta frequência próximos ao 7805  
+- A saída do 7805 alimenta o LED (D1) com o resistor R1  
+- J2 disponibiliza a saída regulada de **5V**
 
-A ponte retificadora converte AC em DC pulsante.
+---
 
-O capacitor C1 faz o primeiro estágio de filtragem.
+## 🧩 PCB
 
-C2 e C3 atuam como filtros e desacoplamentos próximos ao regulador 7805.
-
-A saída do regulador (5V) alimenta o LED indicador através de um resistor.
-
-J2 disponibiliza a saída de 5V regulados.
-
-4.PCB
+📐 **Layout da Placa de Circuito Impresso** (criado no Proteus 8):
 
 ![pcb](Portfólio/PCB/captura.png)
-Esta imagem mostra o layout desenhado em software Protheus 8 e as trilhas de conexão no lado cobreado da placa.
 
-As dimensões finais estimadas são cerca de 50 mm x 30 mm.
+📝 Detalhes Técnicos:
+- Dimensões estimadas: **50 mm x 30 mm**
+- Conectores J1 (entrada) e J2 (saída) posicionados para fácil acesso
+- Trilhas organizadas e bem distribuídas
+- O regulador 7805 (U1) está centralizado para melhor dissipação térmica
 
-Os furos dos conectores J1 e J2 facilitam a ligação de entradas e saídas.
+---
 
-O regulador 7805 (U1) está centralizado, com trilhas de entrada e saída bem definidas.
+## 🔍 Visualização 3D
 
-5.Visualização 3D
+🧱 **Modelo Tridimensional da Placa**:
 
-![3d1](Portfólio/3D/captura3d1.png)
+![3d1](Portfólio/3D/captura3d1.png)  
 ![3d2](Portfólio/3D/captura3d2.png)
 
-Nesta seção é exibida a visão tridimensional da placa, facilitando a identificação e o posicionamento dos componentes:
+🔎 Destaques:
+- Ponte retificadora (BR1) próxima ao conector de entrada  
+- Capacitores (C1, C2, C3) nas posições otimizadas para filtragem  
+- LED (D1) e resistor (R1) bem localizados  
+- Conector de saída (J2) pronto para integração com outros projetos
 
-Ponte retificadora (BR1) próxima ao conector de entrada (J1).
+---
 
-Capacitores (C1, C2 e C3) nas posições adequadas para filtragem.
+## 🛠️ Prática (Montagem Breadboard)
 
-Diodo LED (D1) e resistor (R1) na parte frontal da placa.
+📸 **Montagem do circuito em protoboard para testes**:
 
-Conector de saída (J2) para os 5V.
-
-6.Prática (Montagem)
-
-![teste1](Portfólio/Pratica/imagem1.jpg)
-![protoboard](Portfólio/Pratica/imagem3.jpg)
+![teste1](Portfólio/Pratica/imagem1.jpg)  
+![protoboard](Portfólio/Pratica/imagem3.jpg)  
 ![teste2](Portfólio/Pratica/imagem2.jpg)
 
-Estas fotos mostram a montagem do circuito em uma protoboard para teste:
+✅ **Validações feitas**:
+- Transformador fornece tensão AC à protoboard  
+- Ponte retificadora, capacitores e 7805 conectados conforme o esquemático  
+- LED vermelho aceso confirma que os 5V estão presentes  
+- Medição com multímetro: saída entre **4,96V e 5,01V**
 
-Pode-se observar o transformador alimentando a protoboard.
+---
 
-A ponte retificadora, capacitores e o 7805 estão conectados de acordo com o esquemático.
+## 👤 Autor e Data
 
-O LED aceso indica que a saída de 5V está funcionando.
+- **Autor**: Gabriel Pierin Caurio  
+- 📅 **Data**: Março / 2025
 
-Na medição de tensão de saída (mostrada no multímetro), foi verificado aproximadamente 4,96–5,01 V, validando o funcionamento do regulador.
-
-
-Autor: [Gabriel Pierin Caurio]
-Data: [Março/2025]
